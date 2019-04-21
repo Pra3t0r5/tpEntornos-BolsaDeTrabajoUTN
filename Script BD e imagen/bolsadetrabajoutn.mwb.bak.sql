@@ -57,7 +57,7 @@ DROP TABLE IF EXISTS `bolsadetrabajoutn`.`Localidad` ;
 CREATE TABLE IF NOT EXISTS `bolsadetrabajoutn`.`Localidad` (
   `idLocalidad` INT(9) NOT NULL,
   `descLocalidad` VARCHAR(45) NULL,
-  INDEX `idProvincia_idx` (`idLocalidad` ASC) VISIBLE,
+  INDEX `idProvincia_idx` (`idLocalidad` ASC),
   CONSTRAINT `FKidProvincia`
     FOREIGN KEY (`idLocalidad`)
     REFERENCES `bolsadetrabajoutn`.`Provincia` (`idProvincia`)
@@ -167,7 +167,7 @@ CREATE TABLE IF NOT EXISTS `bolsadetrabajoutn`.`Cliente_Postulaciones` (
   `idCliente` INT NOT NULL,
   `idPostulaciones` INT NOT NULL,
   PRIMARY KEY (`idCliente`, `idPostulaciones`),
-  INDEX `FKPos_idx` (`idPostulaciones` ASC) VISIBLE,
+  INDEX `FKPos_idx` (`idPostulaciones` ASC),
   CONSTRAINT `FKCli`
     FOREIGN KEY (`idCliente`)
     REFERENCES `bolsadetrabajoutn`.`Cliente` (`idCliente`)
@@ -190,7 +190,7 @@ CREATE TABLE IF NOT EXISTS `bolsadetrabajoutn`.`Contratista_OfertaLaboral` (
   `idContratista` INT NOT NULL,
   `idOfertaLaboral` INT NOT NULL,
   PRIMARY KEY (`idContratista`, `idOfertaLaboral`),
-  INDEX `FKidOfertaLaboral_idx` (`idOfertaLaboral` ASC) VISIBLE,
+  INDEX `FKidOfertaLaboral_idx` (`idOfertaLaboral` ASC),
   CONSTRAINT `FKidContratista`
     FOREIGN KEY (`idContratista`)
     REFERENCES `bolsadetrabajoutn`.`Contratista` (`idContratista`)
