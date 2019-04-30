@@ -42,6 +42,10 @@
             $tabla .= "<td>".$fila['idLocalidad']."</td>";   
         }
         echo ($tabla);
+        //Ahora libero el conjunto de resultados
+        mysqli_free_result($resultadoCons);
+        //Ahorra cierro la conexion
+        mysqli_close($link);
         ?>
         
     </body>
