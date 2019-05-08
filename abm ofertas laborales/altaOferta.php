@@ -15,13 +15,13 @@
         $idLocIng = $_POST['idLocalidad']; 
        
 
-       //Ahora tengo que armar la instruccion SQL
+       //Ahora tengo que armar la instruccion SQL para corroborar que ya no este ingresada 
        $consSQL = "SELECT Count(idOfertaLaboral) AS cantOfertas FROM ofertalaboral WHERE idOfertaLaboral='$idOfertaIng'";
        $resultadoCons = mysql_query($link,$consSQL) or die (mysqli_error($link));
 
        //Ahora corroboro si encontro algo
        $cantOfertEnc = mysqli_fetch_assoc($resultadoCons);
-       if ($cantOfertEnc['cantOfertas' != 0]) {
+       if ($cantOfertEnc['cantOfertas'] != 0) {
            echo ("La oferta ya existe");
        } 
        else {

@@ -9,7 +9,7 @@
         $consSQL = "SELECT * FROM ofertalaboral";
         $resultadoCons = mysqli_query($link,$consSQL);
         //Luego me fijo cuantos registros encontre
-        $registrosEnc = mysqli_num_rows($resultadoCons);
+        //$registrosEnc = mysqli_num_rows($resultadoCons);
         //Ahora armo una tabla para mostrar los registros
         
         $tabla = "<table border='2px'>";
